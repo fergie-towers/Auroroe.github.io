@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Sign In</title>
+</head>
+<style type="text/css">
+    /* importamos la fuente de google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;1,300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+body{
+    background-color: #ff8bba;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor{
+    width: 90%;
+    height: 85%;
+    background-color: #ff3a8a;
+    border-radius: 40px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+.formulario{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contenedor-video{
+    width: 60%;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.video{
+    max-width: 800px;
+    border-radius: 40px;
+    margin: auto;
+    display: block;
+}
+.contenedor h3{
+    color: #353535;
+    margin-bottom: 10px;
+}
+.contenedor h2{
+    font-weight: normal;
+    font-size: 3.5rem;
+    line-height: 4rem;
+    margin-bottom: 10px;
+}
+.contenedor p{
+    color: #000;
+}
+.contenedor p a{
+    color:#ff0000;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 10px;
+}
+.contenedor form{
+    margin-top: 50px;
+}
+.contenedor form .entrada{
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 10px 25px;
+    margin-bottom: 20px;
+}
+.contenedor form .entrada label{
+    display: block;
+    color: #000;
+    font-size: 14px;
+    line-height: 14px;
+}
+.contenedor form .entrada input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #000;
+    width: 100%;
+}
+.contenedor .btn{
+    background-color: #ff0000;
+    border: none;
+    padding: 10px 25px;
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+}
+/* seccion responsive */
+@media screen and (max-width:900px) {
+    body{
+        height: auto;
+    }
+    .contenedor{
+        display: block;
+        height: auto;
+    }
+    .formulario{
+        width: 100%;
+    }
+    .contenedor-video{
+        width: 100%;
+    }
+    .video{
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+</style>
+<body>
+    <div class="contenedor">
+        <div class="formulario">
+            <h3>COMIENZA HOY GRATIS</h3>
+            <h2>Crea <br> tú cuenta</h2>
+            <p>Ya eres miembro? <a href="#">Log In</a></p>
+
+            <form action="">
+                <div class="entrada">
+                    <label for="">Primer Nombre</label>
+                    <input type="text">
+                </div>
+                <div class="entrada">
+                    <label for="">Apellido</label>
+                    <input type="text">
+                </div>
+                <div class="entrada">
+                    <label for="">Correo Electrónico</label>
+                    <input type="text">
+                </div>
+                <div class="entrada">
+                    <label for="">Password</label>
+                    <input type="password">
+                </div>
+                <button class="btn">Crear cuenta</button>
+            </form>
+        </div>
+
+        <div class="contenedor-video">
+            <video autoplay muted loop class="video">
+                <source src="img/video.mp4">
+            </video>
+        </div>
+    </div>
+    
+</body>
+</html>

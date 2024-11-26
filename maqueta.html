@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="estilo.css">
+    <title>Auroroe</title>
+</head>
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@200;300;400&family=Parisienne&display=swap');
+*{
+    margin: 0;
+}
+body{
+    background: linear-gradient(to right,#fff19c, #fff19c);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+}
+section{
+    position: absolute;
+    width: 80vw;
+    height: 70vh;
+    border-radius: 30px;
+    padding: 45px;
+    z-index: 5;
+}
+/* PRIMERA PANTALLA */
+.intro{
+    background-color: #ffc8ed0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: 2.5s animInto forwards;
+}
+@keyframes animInto {
+    0%{visibility: visible;}
+    1%{visibility: visible;}
+    100%{visibility: hidden;}
+}
+
+.intro .contenido{
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    animation: .5s aparecer forwards;
+}
+@keyframes aparecer {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+.intro .barra{
+    height: 7px;
+    background: #ffbbd9;
+    border-radius: 4px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.intro .barra .progreso{
+    height: 7px;
+    width: 0%;
+    background: #ff368f;
+    animation: 1.6s avanzar forwards linear;
+    animation-delay: .3s;
+}
+
+@keyframes avanzar {
+    0%{width: 0;}
+    40%{width: 50%;}
+    60%{width: 50%;}
+    100%{width: 100%;}
+}
+.txt{
+    font-family: 'Montserrat';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: -20px;
+    font-size: 22px;
+    color: #FFF;
+}
+.texto1{
+    animation: 0.8s animTexto forwards;
+    animation-delay: .3s;
+}
+@keyframes animTexto {
+    0%{opacity: 0;}
+    1%{opacity: 1;}
+    99%{opacity: 1;}
+    100%{opacity: 0;}
+}
+.texto2{
+    opacity: 0;
+    animation: 0.8s animTexto2 forwards;
+    animation-delay: 1.1s;
+}
+@keyframes animTexto2 {
+    0%{opacity: 0;}
+    1%{opacity: 1;}
+    100%{opacity: 1;}
+}
+
+
+
+
+/* SEGUNDA PANTALLA */
+.info{
+    background: #ffb5e3;
+    /* z-index:5 para diseñar la info */
+    /* z-index: 0; */
+    /* z-index -0 para ejecutar completo */
+    z-index: 0;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Montserrat';
+    box-shadow: -0px 0px 100px rgb(191, 191, 191);
+}
+.info header{
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    animation: 1s header forwards;
+    /* El siguiente delaly lo agregmos al final para */
+    animation-delay: 2.6s;
+    opacity: 0;
+    z-index: 5;
+}
+@keyframes header {
+    0%{
+        opacity: 0;
+        bottom: 20px;
+    }
+    100%{
+        opacity: 1;
+        bottom: 0;
+    }
+}
+.info header a{
+    text-decoration: none;
+    color: #fff;
+    margin-right: 30px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: .3s;
+}
+.info header a:hover{
+    background-color: #ff4591;
+}
+.info header a i{
+    font-size: 30px;
+}
+.info h1{
+    font-family: 'Parisienne';
+    font-size: 5rem;
+}
+.info h3{
+    position: relative;
+    font-family: 'Allura';
+    top:45px;
+    left: 90px;
+    font-size: 35px;
+}
+.info p{
+    max-width: 350px;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.binicio{
+    position: relative;
+    animation: .5s texto forwards linear;
+    /* El siguiente delaly lo agregmos al final para */
+    animation-delay: 2.6s;
+    opacity: 0;
+}
+@keyframes binicio {
+    0%{
+        opacity: 0;
+        left: -50%;
+    }
+    100%{
+        opacity: 1;
+        left: 0;
+    }
+}
+
+
+.info .items{
+    position: absolute;
+    display: flex;
+    background-color: #ff73b5;
+    border-radius: 0 30px 0 0;
+    max-width: 600px;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 40px;
+    left: 0;
+    bottom: -50%;
+    animation: .5s animItems forwards;
+    animation-delay: .5s;
+    /* El siguiente delaly lo agregmos al final para */
+    animation-delay: 3.3s;
+    opacity: 0;
+
+
+}
+.items .opcion{
+    position: relative;
+}
+.items .opcion:hover img{
+    scale: 1.1;
+}
+.items .opcion img{
+    position: relative;
+    height: 100px;
+    z-index: 30 !important;
+    padding: 0 5px;
+    transition: .5s;
+}
+.items .opcion .base{
+    position: absolute;
+    background-color: #FFF;
+    border-radius: 50px 40px 0 0;
+    width: 120%;
+    height: 70px;
+    bottom:0;
+}
+.info .mitad-marron{
+    position: absolute;
+    background: #ff248b;
+    width: 350px;
+    top: 0;
+    height: 100%;
+    right: 0;
+}
+.info .foto-principal{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 180px;
+    max-width: 300px;
+    animation: .5s animFotoPrincipal forwards;
+    /* El siguiente delaly lo agregmos al final para */
+    animation-delay: 2.6s;
+    opacity: 0;
+    transition: .5s;
+    width: 800px;
+    height: 550px;
+}
+.info .foto-principal:hover{
+    scale: 1.1;
+}
+
+.texto{
+    position: relative;
+    animation: .5s texto forwards linear;
+    /* El siguiente delaly lo agregmos al final para */
+    animation-delay: 2.6s;
+    opacity: 0;
+}
+@keyframes texto {
+    0%{
+        opacity: 0;
+        left: -50%;
+    }
+    100%{
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes animFotoPrincipal {
+    0%{
+        opacity: 0;
+        right: -50%;
+    }
+    100%{
+        opacity: 1;
+        right: 180px;
+    }
+}
+@keyframes animItems {
+    0%{
+        opacity: 0;
+        bottom: -50%;
+    }
+    100%{
+        opacity: 1;
+        bottom: 0;
+    }
+}
+
+.item1{
+    top: 180px;
+    animation: .5s animItem1 forwards;
+    animation-delay: 1s;
+    /* El siguiente delaly lo agregmos al final para */
+    animation-delay: 3.9s;
+    opacity: 0;
+}
+@keyframes animItem1 {
+    0%{
+        opacity: 0;
+        top: 185px;
+    }
+    100%{
+        opacity: 1;
+        top: 0;
+    }
+}
+.item2{
+    top: 180px;
+    animation: .5s animItem2 forwards;
+    animation-delay: 1.5s;
+        /* El siguiente delaly lo agregmos al final para */
+        animation-delay: 4.5s;
+        opacity: 0;
+}
+@keyframes animItem2 {
+    0%{
+        opacity: 0;
+        top: 185px;
+    }
+    100%{
+        opacity: 1;
+        top: 0;
+    }
+}
+.item3{
+    top: 185px;
+    animation: .5s animItem3 forwards;
+    animation-delay: 2s;
+    /* El siguiente delaly lo agregmos al final para */
+    animation-delay: 5s;
+    opacity: 0;
+}
+@keyframes animItem3 {
+    0%{
+        opacity: 0;
+        top: 180px;
+    }
+    100%{
+        opacity: 1;
+        top: 0;
+    }
+}
+
+</style>
+<body>
+    <!-- primera pantalla -->
+    <section class="intro">
+        <div class="contenido">
+            <span class="txt texto1">C A R G A N D O . . .</span>
+            <span class="txt texto2">¡LISTO!</span>
+            <div class="barra">
+                <div class="progreso"></div>
+            </div>
+        </div>
+    </section>
+    <!-- segunda pantalla -->
+    <section class="info">
+        <header>
+            <a href="dfe.html"><i class="fa-solid fa-store"></i>CREAR TU CUENTA</a>
+            <a href="maqueta.html">PRINCIPAL</a>
+            <a href="abc.html">JABONES</a>
+        </header>
+        
+        <div class="texto">
+            <h3>Welcome to</h3>
+            <br>
+            <h1>Aurorae!</h1>
+    
+            <h4>Somos una tienda dedicada a promover los productos 
+            <br>libres de crueldad animal optando por productos hechos 
+            <br>con ingredientes 100% naturales.</h4>
+        </div>
+    <section class="binicio">
+        <button onclick="callAlert('Por haber ingresado a nuestra página web, te otorgamos un cupón del 10% de descuento. Regristrate para reclamarlo ;)')">CLIC AQUÍ</button>
+        <script src="aaa.javascript">
+            window.alert = fuction(message, timeout=null){
+                const alert = document.createElement('div');
+                const alertButtom = document.createElement('button')
+                alertButtom.innerText="OK";
+                alert.classList.add('alert');
+                alert.setAtrribute('style',´
+                    position:fixed;
+                    top:100%;
+                    left: 50%;
+                ;
+                alert.innerHTML = '<span>$(message)</span>';
+                alert.appendChild(alertButtom);
+                alertButtom.addEventListener('click', (e)=>{
+                    alert.remove();
+                });
+
+                if(timeout !=null){
+                    setTimeout(()=>{
+                        alert.remove();
+                    }, Number(timeout))
+                }
+                document.body.appendChild(alert);
+            }
+        </script>
+
+        <script type="text/javascript">
+            function callAlert(msg) {
+                alert(msg)
+            }
+        </script>
+    </section>
+        <div class="items">
+            <div class="opcion item1">
+               <img src="img/opcion1.png" alt="">
+               <div class="base"></div>
+            </div>
+            <div class="opcion item2">
+                <div class="base"></div>
+                <img src="img/opcion2.png" alt="">
+            </div>
+            <div class="opcion item3">
+                <img src="img/opcion3.png" alt="">
+                <div class="base"></div>
+             </div>
+        </div>
+
+        <div class="mitad-marron"></div>
+        <img src="img/bonito.gif" alt="" class="foto-principal">
+    </section>
+    
+</body>
+</html>
